@@ -1,0 +1,157 @@
+body{
+	background: black;
+}
+.header{
+	width: 1100px;
+	height: 150px;
+	margin: 0 auto;
+	background: #666666;
+}
+.header h1{ 
+	flood-color: #666666;
+	float: left;
+	padding: 10px;
+	text-align: left;
+	font-family: arial;
+	margin-left: 30px;
+	margin-right: 550px;
+	border-radius: 10px;
+	background: #4d4d4d; 
+	width: 300px;
+}
+.header h1 small{
+	text-align: left;
+	text-decoration: none;
+	font-family: arial;
+	font-size: 20px;
+}
+.menu{
+	border-top: 1px solid;
+	border-color: #39e600;
+	width: 1100px;
+	height: 45px;
+	margin: auto;
+	background: #39e600;
+	text-align: center;
+}
+.menu ul li {
+	display: inline;
+
+}
+
+.menu ul li a {
+	color: #000000;
+	margin:0 30px;
+	text-decoration: none;
+	font-family: verdana;
+
+}
+.menu ul li a:hover{
+	color: #ffffff;
+	margin:0 30px;
+	text-decoration: none;
+	font-family: verdana;
+
+}
+/*
+.kotak img {
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+ 
+.zoom-effect:hover .kotak img {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+}
+
+img{
+	width: 100px;
+	height: 100px;
+	padding: 20px;
+	border-radius: 50px;
+}
+*/
+.
+.konten{
+	background : #ffffff; 
+	border-top: 1px solid;
+	width: 1100px;
+	height: 720px;
+	margin: 0 auto;
+}
+.subkonten1{
+	border-radius: 10px;
+	width: 780px;
+	height: 700px;
+	float: left;
+	margin: 5px;
+	background: #dddddd;
+}
+.sliderr{
+	width: 600px;
+	margin: 0 auto;
+}
+#slider{
+	width: 800px;
+	height: 350px;
+	overflow: hidden;
+	margin: 30px auto;
+}
+#slider img{
+	width: 800px;
+	height: 350px;
+	display: none;
+}
+
+a.left{
+	padding: 5px 10px;
+	background-color: #f0f0f0;
+	margin-top: 10px;
+	text-decoration: none;
+	color: #666;
+	margin-bottom: 10px;
+	float: left;
+}
+a.right {
+	padding: 5px 10px;
+	background-color: #f0f0f0;
+	margin-top: 10px;
+	text-decoration: none;
+	color: #666;
+	margin-bottom: 10px;
+	float: right;
+}
+
+
+
+.footer{
+	width: 1200px;
+	height: 80px;
+	margin: 0 auto;
+}
+.footer img{ 
+	float: left;
+	padding: 10px;
+	text-align: left;
+	margin-left: 40px;
+	margin-right: 550px;
+	border-radius: 10px;
+	width: 1100px;
+	height: 80px;
+}
+.footer h1 small{
+	text-align: left;
+	text-decoration: none;
+	font-family: arial;
+	font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+body{
+	background: black;
+}
+.header{
+	width: 1100px;
+	height: 150px;
+	margin: 0 auto;
+	min-height:120px;
+	background-color: #000;
+}
+.header h1{ 
+	margin-top:10px;
+	font-family:arial;
+	font-size: 50px;
+	color:#39e600;
+	float:left;
+	font-weight: bold;
+	text-align:right;
+	padding:20px 10px 10px 0;
+	border-top-left-radius:15px;
+	border-bottom-left-radius:15px;
+	margin-left: 30px;
+	margin-right: 550px;
+	border-radius: 10px;
+	background: #4d4d4d; 
+	width: 300px;
+}
+.header h1 small{
+	text-align: left;
+	text-decoration: none;
+	font-family: arial;
+	font-size: 20px;
+}
+
+.menu{
+	border-top: 1px solid;
+	border-color: #39e600;
+	width: 1100px;
+	height: 45px;
+	margin: auto;
+	background: #39e600;
+	text-align: center;
+}
+.menu ul li {
+	display: inline;
+
+}
+
+.menu ul li a {
+	color: #000000;
+	margin:0 30px;
+	text-decoration: none;
+	font-family: verdana;
+
+}
+.menu ul li a:hover{
+	color: #ffffff;
+	margin:0 30px;
+	text-decoration: none;
+	font-family: verdana;
+
+}
+.konten{
+	background : #ffffff; 
+	border-top: 1px solid;
+	width: 1100px;
+	height: 720px;
+	margin: 0 auto;
+}
+.subkonten1{
+	border-radius: 10px;
+	width: 1090px;
+	height: 710px;
+	float: left;
+	margin: 5px;
+	background: #dddddd;
+}
+
+.footer{
+	width: 1100px;
+	height: 80px;
+	margin: 0 auto;
+	background: #666666;
+}
+
+
+/*
+.kotak img {
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+ 
+.zoom-effect:hover .kotak img {
+  -webkit-transform: scale(1.08);
+  transform: scale(1.08);
+}
+
+img{
+	width: 100px;
+	height: 100px;
+	padding: 20px;
+	border-radius: 50px;
+}
+*/
