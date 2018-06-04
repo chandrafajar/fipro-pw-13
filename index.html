@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fa/web-fa/css/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3vFU3UlPYTGhJvWPGcx8olQKjVI4d09A"></script>
+    <script src="mapscfg.js"></script>
+
+    <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+
+        app.config(function($routeProvider){
+            $routeProvider
+            .when("/", {
+                templateUrl : "main.htm", controller : "mainCtrl"
+            })
+            .when("/about", {
+                templateUrl : "about.htm", controller : "weatherCtrl"
+            })
+            .when("/contact", {
+                 templateUrl : "contact.html"           
+            });
+
+        });
+
+        app.controller('homeCtrl', function($scope){
+            $scope.title = "KAWASAKI INDONESIA";
+        });
+
+        app.controller('mainCtrl', function($scope){
+            $scope.text1 = "This is paragraph 1";
+            $scope.text2 = "Sample of text to develope website using Framework Angular JS";
+            $scope.text3 = "We learn about Routing and controller in Angular JS";
+
+        });
+
+        app.controller('weatherCtrl', function($scope, $http){
+            $http.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=4de4dd041e499ca8a4f6692097befdae')
+            .then(function(response){
+                $scope.info = response.data;
+            });
+        });
+    </script>
+
+  </head>
+
+  <body>
+
+  	<div ng-app="myApp" ng-controller="homeCtrl" class="container-fluid">
+  	  <div class="row">
+  	  	<div class="col-md-12 header">
+  	  		<h1>{{ title }}</h1>
+  	  	</div>
+	  </div>
+
+	  <div class="row">
+	  	<div class="col-md-12 menu">
+        <div class="menu-wrap">    
+        <ul>
+          <li><a href="#/!"><!-- <i class="fas fa-home"> --></i> Home</a></li>
+          <li><a href="#!about"></i>About</a></li>
+          <li><a href="product.html"></i>Product</a></li>
+          <li><a href="#!contact"></i>Contact</a></li>
+        </ul>
+	  		</div>
+	  		
+	  	</div>
+	  </div>
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img style="width: 1350px; height: 600px;" src="./slider/slide1.jpg">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style="width: 1300px; height: 600px;" src="slider/slide2.jpg">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style=" width: 1350px; height: 600px;" src="./slider/slide3.jpg">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style=" width: 1350px; height: 600px;" src="./slider/slide4.jpg">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+
+
+	  <div ng-view></div>
+    <div class="row">
+	  	<hr />
+	  	<div class="col-md-6">&copy; 2018 - pw 13s</div>
+        <div class="col-md-6"><div id="map" style="width: 700px; height: 400px"></div></div>
+	  </div>
+
+	</div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>
