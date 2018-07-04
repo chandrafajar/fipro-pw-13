@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fa/web-fa/css/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="stylepro.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3vFU3UlPYTGhJvWPGcx8olQKjVI4d09A"></script>
+
+    <script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "halproduct/prohome.html"
+    })
+
+    .when("/n", {
+      templateUrl : "halproduct/n.htm"
+    })
+
+    .when("/z", {
+      templateUrl : "halproduct/z.htm"
+    })
+
+    .when("/v", {
+      templateUrl : "halproduct/v.htm"
+    })
+    .when("/vc", {
+      templateUrl : "halproduct/vc.htm"
+    })
+
+     .when("/sm", {
+      templateUrl : "halproduct/sm.htm"
+     })
+      .when("/or", {
+      templateUrl : "halproduct/or.htm"
+     })
+    });
+
+        app.controller('homeCtrl', function($scope){
+            $scope.title = "Kawasaki Indonesia";
+        });
+
+
+</script>
+
+  </head>
+
+  <body>
+
+    <div ng-app="myApp" ng-controller="homeCtrl" class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 header">
+          <h1>{{ title }}</h1>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 menu">
+        <div class="menu-wrap">    
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="#!n">Ninja</a></li>
+          <li><a href="#!z">Z Series</a></li>
+          <li><a href="#!v">Versys</a></li>
+          <li><a href="#!vc">Vulcan</a></li>
+          <li><a href="#!sm">Street Model</a></li>
+          <li><a href="#!or">Off Road</a></li>
+        </ul>
+        </div>
+        
+      </div>
+    </div>
+        
+
+
+    <div ng-view></div>
+  </div>
+    
+  </body>
+
+</html>

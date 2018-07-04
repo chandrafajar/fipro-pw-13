@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<title>Kawasaki Indonesia</title>
+
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fa/web-fa/css/fontawesome-all.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+    <script>
+    	var app = angular.module("myApp", ["ngRoute"]);
+
+    	app.config(function($routeProvider){
+    		$routeProvider
+		    .when("/", {
+            templateUrl : "main.htm", controller : "mainCtrl"
+        }) 	
+		    .when("/about", {
+		    	templateUrl : "about.htm", controller : "weatherCtrl"
+		    });
+
+    	});
+
+    	app.controller('homeCtrl', function($scope){
+    		$scope.title = "Kawasaki Indonesia";
+    	});
+
+    	app.controller('mainCtrl', function($scope){
+    		$scope.text1 = "Bengkel Siaga Kawasaki";
+    		$scope.text2 = "New Ninja 250: Performa Bengis Genre Sejenis";
+    		$scope.text3 = "Promo DP Bisa Punya Ninja";
+
+    	});
+
+    	app.controller('weatherCtrl', function($scope, $http){
+    		$http.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=4de4dd041e499ca8a4f6692097befdae')
+    		.then(function(response){
+    			$scope.info = response.data;
+    		});
+    	});
+    </script>
+
+  </head>
+
+  <body>
+
+  	<div ng-app="myApp" ng-controller="homeCtrl" class="container-fluid">
+  	  <div class="row">
+  	  	<div class="col-md-12 header">
+  	  		<h1><a href="index.html" style="text-decoration: none; color: #36e600;">{{ title }}</a></h1>
+  	  	</div>
+	  </div>
+
+	  <div class="row">
+	  	<div class="col-md-12 menu">
+	  		<ul>
+	  			<li><a href="#/!"><i class="fas fa-home"></i> Home</a></li>
+	  			<li><a href="product.html"><i class="fas fa-list"></i> Product</a></li>
+	  			<li><a href="#!about"><i class="fas fa-users"></i> About</a></li>
+	  			<li><a href="contavt.html"><i class="fab fa-telegram"></i> Contact</a></li>
+	  		</ul>
+	  		
+	  	</div>
+	  </div>
+
+
+	   
+
+
+	  <div ng-view></div>
+	  
+	  <!-- footer -->
+
+
+	  <div class="row">
+	  	<hr />
+	  	<!-- <div class="col-md-12">&copy; 2018</div> -->
+	  	<footer class="container">
+        <p class="float-right"><a href="#">Back to Home</a></p>
+          <section style="margin-top: 70px;" id="about">
+        <div class="container">
+            <center>
+                <h1>
+                    CURRENCY EXCHANGE
+                </h1>
+            </center>
+            <select class="form-control" id="from" onchange="convertCurrency();">
+                    <option value="USD" selected>AMERICAN DOLLAR (USD)</option>
+                    <option value="GBP">BRITISH POUND(GBP)	</optio>
+                    <option value="JPY">JEPANG YEN (JPY)</option>
+                    <option value="AUD">AUSTRALIAN DOLLAT (AUD)</option>
+                    <option value="IDR">INDONESIA RUPIAH (IDR)</option>
+                  </select>
+            <br>
+            <input type="text" id="fromAmount" value="1" onkeyup="convertCurrency();" class="form-control">
+            <br>
+            <select class="form-control" id="to" onchange="convertCurrency();">
+                    <option value="GBP">BRITISH POUND (GBP)</option>
+                    <option value="JPY">JEPANG YEN (JPY)</optio>
+                    <option value="AUD">AUSTRALIAN DOLLAT (AUD)</option>
+                    <option value="USD">AMERICAN DOLLAR (USD)</option>
+                    <option value="IDR">INDONESIA RUPIAH (IDR)</option>
+             </select>
+            <br>
+
+            <input type="text" id="toAmount" class="form-control " disabled>
+
+                <script>
+        function convertCurrency() {
+            var from = document.getElementById("from").value;
+            var to = document.getElementById("to").value;
+            var xmlhttp = new XMLHttpRequest();
+            var url = "http://data.fixer.io/api/latest?access_key=df8c15494151a866f35cb2b848eb192d&symbols=" + from + "," + to;
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var result = xmlhttp.responseText;
+                    var jsResult = JSON.parse(result);
+                    var oneUnit = jsResult.rates[to] / jsResult.rates[from];
+                    var amt = document.getElementById("fromAmount").value;
+                    document.getElementById("toAmount").value = (oneUnit * amt).toFixed(2);
+                }
+            }
+        }
+    </script>
+        </div>
+
+    </section>
+        <p>© 2018 Pemrograman 13, Inc.</p>
+      </footer>
+	  </div>
+
+	</div>
+
+		 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>

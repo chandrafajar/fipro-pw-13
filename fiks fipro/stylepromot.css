@@ -1,0 +1,30 @@
+body{
+	background-color: black;
+}
+
+img{
+	position: center;
+	text-align: center;
+	width: 300px;
+	height: 300px;
+}
+.carousel-inner img{
+	width: 1350px; 
+	height: 600px;
+	position: center;
+	text-align: center;
+	float: center;
+
+}
+
+.c1{
+	float: left;
+	margin-right: 10px;
+	width: 286px;
+	height: 285px;
+	background-color: #fff;
+}
+p{
+	color: #fff;
+	text-align: center;
+}
